@@ -30,6 +30,36 @@ jobs:
           cd extracted
           npm install
 
+      - name: Replace Later app icon
+        run: |
+          mkdir -p extracted/android/app/src/main/res/drawable
+          cp later-icon.png extracted/android/app/src/main/res/drawable/later_icon.png
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          manifest = Path("extracted/android/app/src/main/AndroidManifest.xml")
+          text = manifest.read_text()
+
+          text = re.sub(
+              r'android:icon="@[^"]+"',
+              'android:icon="@drawable/later_icon"',
+              text,
+              count=1
+          )
+
+          text = re.sub(
+              r'android:roundIcon="@[^"]+"',
+              'android:roundIcon="@drawable/later_icon"',
+              text,
+              count=1
+          )
+
+          manifest.write_text(text)
+          print("Later icon applied successfully.")
+          PY
+
       - name: Write local.properties
         run: |
           echo "sdk.dir=$ANDROID_HOME" > extracted/android/local.properties
@@ -45,5 +75,3 @@ jobs:
         with:
           name: Later-APK
           path: extracted/android/app/build/outputs/apk/debug/*.apk
-
-
