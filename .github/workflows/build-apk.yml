@@ -21,14 +21,9 @@ jobs:
           cd extracted
           npm install
 
-      - name: Find Android project
-        run: |
-          ANDROID_DIR=$(find extracted -type f -name gradlew -print -quit | xargs dirname)
-          echo "ANDROID_DIR=$ANDROID_DIR" >> "$GITHUB_ENV"
-
       - name: Build APK
         run: |
-          cd "$ANDROID_DIR"
+          cd extracted/android
           chmod +x gradlew
           ./gradlew assembleDebug
 
@@ -36,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Later-APK
-          path: extracted/**/build/outputs/apk/debug/*.apk
+          path: extracted/android/app/build/outputs/apk/debug/*.apk
