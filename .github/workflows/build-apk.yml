@@ -16,6 +16,13 @@ jobs:
           mkdir extracted
           unzip -q "later (1).zip" -d extracted
 
+          
+    - name: Install dependencies
+      run: |
+        cd extracted
+        npm install
+
+        
       - name: Find Android project
         run: |
           ANDROID_DIR=$(find extracted -type f -name gradlew -print -quit | xargs dirname)
