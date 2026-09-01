@@ -44,16 +44,16 @@ jobs:
         run: |
           cd "$PROJECT_ROOT"
           npm install
+          npm install @capacitor/local-notifications
 
       - name: Build web assets
         run: |
           cd "$PROJECT_ROOT"
           npm run build
 
-      - name: Install local notifications plugin and sync native project
+      - name: Sync native project
         run: |
           cd "$PROJECT_ROOT"
-          npm install @capacitor/local-notifications
           npx cap sync android
 
       - name: Write local.properties
