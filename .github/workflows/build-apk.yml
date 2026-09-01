@@ -25,48 +25,42 @@ jobs:
           mkdir extracted
           unzip -q "later (1).zip" -d extracted
 
+          # The zip may or may not contain a wrapper folder around the
+          # actual project (package.json, android/, src/). Detect the
+          # real project root automatically so later steps always work.
+          if [ -f "extracted/package.json" ]; then
+            PROJECT_ROOT="extracted"
+          else
+            PROJECT_ROOT=$(dirname "$(find extracted -maxdepth 3 -name package.json | head -n 1)")
+          fi
+
+          if [ -z "$PROJECT_ROOT" ] || [ ! -f "$PROJECT_ROOT/package.json" ]; then
+            echo "Could not locate package.json inside the extracted zip!"
+            find extracted -maxdepth 3
+            exit 1
+          fi
+
+          echo "Detected project root: $PROJECT_ROOT"
+          echo "PROJECT_ROOT=$PROJECT_ROOT" >> "$GITHUB_ENV"
+
       - name: Install dependencies
         run: |
-          cd extracted
+          cd "$PROJECT_ROOT"
           npm install
 
-      - name: Replace Later app icon
+      - name: Install local notifications plugin and sync native project
         run: |
-          mkdir -p extracted/android/app/src/main/res/drawable
-          cp later-icon.png extracted/android/app/src/main/res/drawable/later_icon.png
-
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-
-          manifest = Path("extracted/android/app/src/main/AndroidManifest.xml")
-          text = manifest.read_text()
-
-          text = re.sub(
-              r'android:icon="@[^"]+"',
-              'android:icon="@drawable/later_icon"',
-              text,
-              count=1
-          )
-
-          text = re.sub(
-              r'android:roundIcon="@[^"]+"',
-              'android:roundIcon="@drawable/later_icon"',
-              text,
-              count=1
-          )
-
-          manifest.write_text(text)
-          print("Later icon applied successfully.")
-          PY
+          cd "$PROJECT_ROOT"
+          npm install @capacitor/local-notifications
+          npx cap sync android
 
       - name: Write local.properties
         run: |
-          echo "sdk.dir=$ANDROID_HOME" > extracted/android/local.properties
+          echo "sdk.dir=$ANDROID_HOME" > "$PROJECT_ROOT/android/local.properties"
 
       - name: Build APK
         run: |
-          cd extracted/android
+          cd "$PROJECT_ROOT/android"
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
 
@@ -74,4 +68,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Later-APK
-          path: extracted/android/app/build/outputs/apk/debug/*.apk
+          path: ${{ env.PROJECT_ROOT }}/android/app/build/outputs/apk/debug/*.apk
