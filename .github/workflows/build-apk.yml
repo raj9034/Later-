@@ -25,9 +25,6 @@ jobs:
           mkdir extracted
           unzip -q "later (1).zip" -d extracted
 
-          # The zip may or may not contain a wrapper folder around the
-          # actual project (package.json, android/, src/). Detect the
-          # real project root automatically so later steps always work.
           if [ -f "extracted/package.json" ]; then
             PROJECT_ROOT="extracted"
           else
@@ -47,6 +44,11 @@ jobs:
         run: |
           cd "$PROJECT_ROOT"
           npm install
+
+      - name: Build web assets
+        run: |
+          cd "$PROJECT_ROOT"
+          npm run build
 
       - name: Install local notifications plugin and sync native project
         run: |
