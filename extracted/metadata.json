@@ -1,6 +1,0 @@
-{
-  "name": "Later",
-  "description": "Universal remember this later application. Save anything instantly, forget about it, and let Later bring it back at the right time.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
