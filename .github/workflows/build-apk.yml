@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: |
           cd "$PROJECT_ROOT"
+          rm -f package-lock.json
           npm install
-          npm install @capacitor/local-notifications
 
       - name: Build web assets
         run: |
