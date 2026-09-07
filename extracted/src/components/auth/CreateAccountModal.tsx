@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useAuth } from '../../context/AuthContext';
 import { useLater } from '../../context/LaterContext';
 import { useScrollIntoViewOnFocus } from '../../utils/useScrollIntoViewOnFocus';
-import { X, Mail, Lock, AlertCircle, Loader2, CheckCircle2, Eye, EyeOff } from 'lucide-react';
+import { X, Mail, Lock, CircleAlert as AlertCircle, Loader as Loader2, CircleCheck as CheckCircle2, Eye, EyeOff } from 'lucide-react';
 
 export const CreateAccountModal: React.FC = () => {
   const {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Calendar, Search, Plus, User as UserIcon } from 'lucide-react';
+import { Hop as Home, Calendar, Search, Plus, User as UserIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export type NavTab = 'home' | 'schedule' | 'search' | 'profile';

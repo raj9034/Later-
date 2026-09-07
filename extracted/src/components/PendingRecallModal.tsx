@@ -8,23 +8,7 @@ import {
   getMemoryMomentWhyNow,
 } from '../utils/reminderService';
 import { getReschedulePresetOptions } from '../utils/rescheduleHelper';
-import {
-  X,
-  Sparkles,
-  ExternalLink,
-  Play,
-  Camera,
-  MapPin,
-  FileText,
-  Phone,
-  CheckCircle2,
-  Clock,
-  ArrowRight,
-  Calendar,
-  Flame,
-  Star,
-  Leaf,
-} from 'lucide-react';
+import { X, Sparkles, ExternalLink, Play, Camera, MapPin, FileText, Phone, CircleCheck as CheckCircle2, Clock, ArrowRight, Calendar, Flame, Star, Leaf } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface PendingRecallModalProps {

@@ -1,21 +1,6 @@
 import React, { useState } from 'react';
 import { SavedItem } from '../../types';
-import {
-  Play,
-  Camera,
-  MapPin,
-  CheckCircle2,
-  ExternalLink,
-  Phone,
-  FileText,
-  Clock,
-  Archive,
-  Check,
-  Timer,
-  Flame,
-  Star,
-  Leaf,
-} from 'lucide-react';
+import { Play, Camera, MapPin, CircleCheck as CheckCircle2, ExternalLink, Phone, FileText, Clock, Archive, Check, Timer, Flame, Star, Leaf } from 'lucide-react';
 import { formatItemReminderLabel } from '../../utils/reminderService';
 import { getAutoArchiveTimeRemaining } from '../../utils/autoArchiveService';
 

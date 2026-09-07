@@ -1,14 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLater } from '../../context/LaterContext';
 import { CapturePreview } from './CapturePreview';
-import {
-  Clipboard,
-  X,
-  ArrowUpRight,
-  Check,
-  Edit2,
-  RefreshCw,
-} from 'lucide-react';
+import { Clipboard, X, ArrowUpRight, Check, CreditCard as Edit2, RefreshCw } from 'lucide-react';
 
 interface ClipboardCaptureProps {
   onClose: () => void;

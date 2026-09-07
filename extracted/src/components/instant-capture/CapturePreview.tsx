@@ -1,5 +1,5 @@
 import React from 'react';
-import { Youtube, Globe, FileText, CheckCircle2, Link2, Sparkles } from 'lucide-react';
+import { Route as Youtube, Globe, FileText, CircleCheck as CheckCircle2, Link2, Sparkles } from 'lucide-react';
 
 interface CapturePreviewProps {
   content: string;

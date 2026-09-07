@@ -1,13 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import {
-  Sparkles,
-  ChevronRight,
-  ChevronLeft,
-  X,
-  Compass,
-  CheckCircle2,
-} from 'lucide-react';
+import { Sparkles, ChevronRight, ChevronLeft, X, Compass, CircleCheck as CheckCircle2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 export interface TourStep {

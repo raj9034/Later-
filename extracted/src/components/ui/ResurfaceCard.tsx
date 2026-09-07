@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SavedItem, UrgencyTag } from '../../types';
-import { CheckCircle2, Clock, Sparkles, Flame, Star, Leaf } from 'lucide-react';
+import { CircleCheck as CheckCircle2, Clock, Sparkles, Flame, Star, Leaf } from 'lucide-react';
 
 export interface ResurfaceCardProps {
   item: SavedItem;

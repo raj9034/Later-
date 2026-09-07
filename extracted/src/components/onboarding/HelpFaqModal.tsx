@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  X, 
-  HelpCircle, 
-  ChevronDown, 
-  Sparkles, 
-  Clock, 
-  Layers, 
-  RotateCw, 
-  ShieldCheck,
-  Compass
-} from 'lucide-react';
+import { X, Circle as HelpCircle, ChevronDown, Sparkles, Clock, Layers, RotateCw, ShieldCheck, Compass } from 'lucide-react';
 
 interface HelpFaqModalProps {
   isOpen: boolean;

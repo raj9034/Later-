@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useLater } from '../context/LaterContext';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
-import { UserPlus, LogIn, LogOut, HelpCircle, Sun, Moon, RotateCcw, Sparkles } from 'lucide-react';
+import { UserPlus, LogIn, LogOut, Circle as HelpCircle, Sun, Moon, RotateCcw, Sparkles } from 'lucide-react';
 
 interface AccountMenuProps {
   isOpen: boolean;

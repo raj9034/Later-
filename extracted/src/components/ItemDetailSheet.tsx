@@ -4,33 +4,7 @@ import { formatItemReminderLabel, calculateFlexibleTarget, normalizeItemReminder
 import { getAutoArchiveTimeRemaining } from '../utils/autoArchiveService';
 import { SavedItem, FlexiblePeriod, ItemReminder, UrgencyTag } from '../types';
 import { NotNowRescheduleMenu } from './NotNowRescheduleMenu';
-import {
-  X,
-  ExternalLink,
-  Phone,
-  Clock,
-  CheckCircle2,
-  Archive,
-  Trash2,
-  Play,
-  Camera,
-  MapPin,
-  FileText,
-  Check,
-  Sparkles,
-  ArrowRight,
-  Timer,
-  Sun,
-  Moon,
-  CalendarDays,
-  CalendarRange,
-  Calendar,
-  Copy,
-  Flame,
-  Star,
-  Leaf,
-  Pencil,
-} from 'lucide-react';
+import { X, ExternalLink, Phone, Clock, CircleCheck as CheckCircle2, Archive, Trash as Trash2, Play, Camera, MapPin, FileText, Check, Sparkles, ArrowRight, Timer, Sun, Moon, CalendarDays, CalendarRange, Calendar, Copy, Flame, Star, Leaf, Pencil } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useScrollIntoViewOnFocus } from '../utils/useScrollIntoViewOnFocus';
 

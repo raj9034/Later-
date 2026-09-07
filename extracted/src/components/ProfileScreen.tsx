@@ -2,20 +2,7 @@ import React, { useState } from 'react';
 import { useLater } from '../context/LaterContext';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
-import {
-  UserPlus,
-  LogIn,
-  LogOut,
-  HelpCircle,
-  Sun,
-  Moon,
-  RotateCcw,
-  Sparkles,
-  ChevronRight,
-  Heart,
-  ShieldCheck,
-  Quote,
-} from 'lucide-react';
+import { UserPlus, LogIn, LogOut, Circle as HelpCircle, Sun, Moon, RotateCcw, Sparkles, ChevronRight, Heart, ShieldCheck, Quote } from 'lucide-react';
 
 interface ProfileScreenProps {
   onOpenHelp: () => void;

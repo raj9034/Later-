@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader2, Sparkles, AlertCircle, CheckCircle2, Inbox, Search, FolderOpen, RefreshCw } from 'lucide-react';
+import { Loader as Loader2, Sparkles, CircleAlert as AlertCircle, CircleCheck as CheckCircle2, Inbox, Search, FolderOpen, RefreshCw } from 'lucide-react';
 import { Button } from './Button';
 
 export type SystemStateType =

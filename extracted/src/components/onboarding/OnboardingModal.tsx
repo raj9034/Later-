@@ -4,17 +4,7 @@ import { useLater } from '../../context/LaterContext';
 import { useAuth, ONBOARDING_STORAGE_KEY } from '../../context/AuthContext';
 import { sounds } from '../../utils/audio';
 import { HelpFaqModal } from './HelpFaqModal';
-import { 
-  Sparkles, 
-  ArrowRight, 
-  Clock, 
-  Layers, 
-  CheckCircle2, 
-  Compass, 
-  CornerDownLeft, 
-  HelpCircle,
-  X 
-} from 'lucide-react';
+import { Sparkles, ArrowRight, Clock, Layers, CircleCheck as CheckCircle2, Compass, CornerDownLeft, Circle as HelpCircle, X } from 'lucide-react';
 
 interface OnboardingModalProps {
   forceOpen?: boolean;

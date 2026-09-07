@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader2, Check } from 'lucide-react';
+import { Loader as Loader2, Check } from 'lucide-react';
 
 export type ButtonVariant =
   | 'primary'

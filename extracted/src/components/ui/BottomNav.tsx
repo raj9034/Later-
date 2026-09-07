@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Search, CalendarDays, UserRound } from 'lucide-react';
+import { Hop as Home, Search, CalendarDays, UserRound } from 'lucide-react';
 
 export type BottomNavTab = 'home' | 'search' | 'schedule' | 'profile';
 

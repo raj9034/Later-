@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Calendar, AlertCircle } from 'lucide-react';
+import { Clock, Calendar, CircleAlert as AlertCircle } from 'lucide-react';
 
 export interface DateTimeBadgeProps {
   dateString?: string;
