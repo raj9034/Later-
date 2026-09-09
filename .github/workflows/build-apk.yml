@@ -60,6 +60,12 @@ jobs:
         run: |
           echo "sdk.dir=$ANDROID_HOME" > "$PROJECT_ROOT/android/local.properties"
 
+      - name: Print debug SHA-1
+        run: |
+          cd "$PROJECT_ROOT/android"
+          chmod +x gradlew
+          ./gradlew signingReport
+
       - name: Build APK
         run: |
           cd "$PROJECT_ROOT/android"
